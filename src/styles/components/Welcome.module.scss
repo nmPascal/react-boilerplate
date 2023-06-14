@@ -1,0 +1,229 @@
+.welcome {
+    @include dimensions($height: 100vh);
+    background-color: $color_black;
+    overflow: hidden;
+
+    .welcome__star {
+        position: absolute;
+        top: -5px;
+        @include dimensions(2px, 2px);
+        background-color: $color_white;
+        border-radius: 50%;
+        animation: stars 5s linear infinite;
+
+        @for $i from 1 through 80 {
+            &:nth-of-type(#{$i}) {
+                animation-delay: random() * 5s;
+                left: random() * 100%;
+            }
+        }
+    }
+
+    .welcome__astronaut {
+        @include dimensions(250px, 300px);
+        position: absolute;
+        z-index: 11;
+        top: calc(50% - 150px);
+        left: calc(50% - 125px);
+        animation: astronaut 5s linear infinite;
+
+        .welcome__astronaut__schoolbag {
+            @include dimensions(100px, 150px);
+            position: absolute;
+            z-index: 1;
+            top: calc(50% - 75px);
+            left: calc(50% - 50px);
+            background-color: $welcome_pale_cerulean;
+            border-radius: 50px 50px 0 0 / 30px 30px 0 0;
+        }
+
+        .welcome__astronaut__head {
+            @include dimensions(97px, 80px);
+            position: absolute;
+            z-index: 3;
+            background: $white_gradient;
+            border-radius: 50%;
+            top: 34px;
+            left: calc(50% - 47.5px);
+
+            &::before {
+                content: "";
+                @include dimensions(12px, 25px);
+                position: absolute;
+                top: calc(50% - 12.5px);
+                left: -4px;
+                background-color: $welcome_blue_gray;
+                border-radius: 5px;
+                box-shadow: 92px 0px 0px $welcome_blue_gray;
+            }
+
+            &::after {
+                content: "";
+                @include dimensions(60px, 50px);
+                position: absolute;
+                top: calc(50% - 25px);
+                left: calc(50% - 30px);
+                background: $blue_gradient;
+                border-radius: 15px;
+            }
+        }
+
+        .welcome__astronaut__body {
+            @include dimensions(85px, 100px);
+            position: absolute;
+            z-index: 2;
+            background-color: $welcome_lavender_blush;
+            border-radius: 40px / 20px;
+            top: 105px;
+            left: calc(50% - 41px);
+            background: $white_gradient;
+
+            .welcome__astronaut__body__panel {
+                @include dimensions(60px, 40px);
+                position: absolute;
+                top: 20px;
+                left: calc(50% - 30px);
+                background-color: $welcome_light_sky_blue;
+
+                &::before {
+                    content: "";
+                    @include dimensions(30px, 5px);
+                    position: absolute;
+                    top: 9px;
+                    left: 7px;
+                    background-color: $welcome_white_light;
+                    box-shadow: 0px 9px 0px $welcome_white_light, 0px 18px 0px $welcome_white_light;
+                }
+
+                &::after {
+                    content: "";
+                    @include dimensions(8px, 8px);
+                    position: absolute;
+                    top: 9px;
+                    right: 7px;
+                    background-color: $welcome_white_light;
+                    border-radius: 50%;
+                    box-shadow: 0px 14px 0px 2px $welcome_white_light;
+                }
+            }
+        }
+
+        .welcome__astronaut__arm {
+            @include dimensions(80px, 30px);
+            position: absolute;
+            top: 121px;
+            z-index: 2;
+
+            /* ARM LEFT */
+            &:nth-of-type(2) {
+                left: 30px;
+                background-color: $welcome_white_dark;
+                border-radius: 0 0 0 39px;
+
+                &::before {
+                    content: "";
+                    @include dimensions(30px, 70px);
+                    position: absolute;
+                    top: -40px;
+                    border-radius: 50px 50px 0px 120px / 50px 50px 0 110px;
+                    left: 0;
+                    background-color:$welcome_white_dark;
+                }
+
+                &::after {
+                    content: "";
+                    @include dimensions(30px, 10px);
+                    position: absolute;
+                    top: -24px;
+                    background-color: $welcome_cadet_blue;
+                    left: 0;
+                }
+            }
+
+            /* ARM RIGHT */
+            &:nth-of-type(3) {
+                right: 30px;
+                background-color: $welcome_lavender_blush;
+                border-radius: 0 0 39px 0;
+
+                &::before {
+                    content: "";
+                    @include dimensions(30px, 70px);
+                    position: absolute;
+                    top: -40px;
+                    border-radius: 50px 50px 120px 0px / 50px 50px 110px 0;
+                    right: 0;
+                    background-color: $welcome_lavender_blush;
+                }
+
+                &::after {
+                    content: "";
+                    @include dimensions(30px, 10px);
+                    position: absolute;
+                    top: -24px;
+                    background-color: $welcome_cadet_blue;
+                    right: 0;
+                }
+            }
+        }
+
+        .welcome__astronaut__leg {
+            @include dimensions(30px, 40px);
+            position: absolute;
+            z-index: 2;
+            bottom: 70px;
+
+            /* LEG LEFT */
+            &:nth-of-type(5) {
+                left: 76px;
+                background-color: $welcome_white_dark;
+                transform: rotate(20deg);
+
+                &::before {
+                    content: "";
+                    @include dimensions(50px, 25px);
+                    position: absolute;
+                    bottom: -26px;
+                    left: -20px;
+                    background-color: $welcome_white_dark;
+                    border-radius: 30px 0 0 0;
+                    border-bottom: 10px solid $welcome_steel_blue;
+                }
+            }
+
+            /* LEG RIGHT */
+            &:nth-of-type(6) {
+                right: 73px;
+                background-color: $welcome_white_light;
+                transform: rotate(-20deg);
+
+                &::before {
+                    content: "";
+                    @include dimensions(50px, 25px);
+                    position: absolute;
+                    bottom: -26px;
+                    right: -20px;
+                    background-color: $welcome_white_light;
+                    border-radius: 0 30px 0 0;
+                    border-bottom: 10px solid $welcome_steel_blue;
+                }
+            }
+        }
+    }
+
+    .welcome__text {
+        @include dimensions(100%, 100vh);
+        @include flex(column, space-between, center);
+        padding: 4rem 0;
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 400;
+        }
+
+        h3 {
+            font-size: 2rem;
+            font-weight: 200;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Josefin+Sans:wght@200;400&display=swap");
+
+/* Fonts */
+$font_arvo: "Arvo", serif;
+$font_josefin: "Josefin Sans", sans-serif;
+
+/* Colors */
+$color_black: #212121;
+$color_white: rgba(255, 255, 255, 0.87);
+
+/* Welcome Astronaut variables */
+$welcome_blue_dark: #0391bf;
+$welcome_blue_gray: #618095;
+$welcome_steel_blue: #6d96ac;
+$welcome_cadet_blue: #6e91a4;
+$welcome_blue_light: #15aece;
+$welcome_pale_cerulean: #94b7ca;
+$welcome_light_sky_blue: #b7cceb;
+$welcome_white_dark: #e3e8eb;
+$welcome_white_light: #fbfdfa;
+$welcome_light_cyan: #e0f7ff;
+$welcome_lavender_blush: #fffbff;
+
+
+$white_gradient: -webkit-linear-gradient(
+    left,
+    $welcome_white_dark 0%,
+    $welcome_white_dark 50%,
+    $welcome_white_light 50%,
+    $welcome_white_light 100%
+);
+$blue_gradient: -webkit-linear-gradient(
+    top,
+    $welcome_blue_light 0%,
+    $welcome_blue_light 50%,
+    $welcome_blue_dark 50%,
+    $welcome_blue_dark 100%
+);
